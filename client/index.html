@@ -17,6 +17,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
@@ -24,6 +25,7 @@
       <link rel="stylesheet" href="app/account/login/login.css">
       <link rel="stylesheet" href="app/admin/admin.css">
       <link rel="stylesheet" href="app/main/main.css">
+      <link rel="stylesheet" href="components/bootstrap-themes/bootswatch-simplex.css">
       <!-- endinjector -->
       <link rel="stylesheet" href="app/app.css">
     <!-- endbuild -->
@@ -76,10 +78,14 @@
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <script src="bower_components/angular-socket-io/socket.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/toastr/toastr.js"></script>
+      <script src="bower_components/angular-gettext/dist/angular-gettext.js"></script>
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js({.tmp,client}) app/app.js -->
       <script src="app/app.js"></script>
+      <script src="components/translation/sg.translation.module.js"></script>
+      <script src="components/translation/sg.translation.js"></script>
       <!-- injector:js -->
       <script src="app/account/account.js"></script>
       <script src="app/account/login/login.controller.js"></script>
