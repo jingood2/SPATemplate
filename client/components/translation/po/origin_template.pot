@@ -1,0 +1,29 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+
+#: client/app/main/main.html:5
+msgid "'Allo, 'Allo!"
+msgstr ""
+
+#: client/app/main/main.html:24
+msgid "Add a new thing here."
+msgstr ""
+
+#: client/app/main/main.html:26
+msgid "Add New"
+msgstr ""
+
+#: client/app/main/main.html:14
+msgid "Features:"
+msgstr ""
+
+#: client/app/main/main.html:6
+msgid "Kick-start your next web app with Angular Fullstack"
+msgstr ""
+
+#: client/app/main/main.html:22
+msgid "Syncs in realtime across clients"
+msgstr ""

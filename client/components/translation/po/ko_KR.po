@@ -1,0 +1,37 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.8.7\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ko_KR\n"
+
+#: client/app/main/main.html:5
+msgid "'Allo, 'Allo!"
+msgstr "‘여보세요’여보세요!"
+
+#: client/app/main/main.html:24
+msgid "Add a new thing here."
+msgstr "여기에서 새로 추가하기"
+
+#: client/app/main/main.html:26
+msgid "Add New"
+msgstr "추가"
+
+#: client/app/main/main.html:14
+msgid "Features:"
+msgstr "주요 기능 소개"
+
+#: client/app/main/main.html:6
+msgid "Kick-start your next web app with Angular Fullstack"
+msgstr "각도 Fullstack와 다음 웹 응용 프로그램을-시작 킥"
+
+#: client/app/main/main.html:22
+msgid "Syncs in realtime across clients"
+msgstr "클라이언트에서 실시간으로 동기화"
