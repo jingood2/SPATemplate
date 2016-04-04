@@ -25,6 +25,7 @@ module.exports = function(config) {
       'client/bower_components/angular-gettext/dist/angular-gettext.js',
       'client/components/translation/sg.translation.module.js',
       'client/components/message/sg.message.module.js',
+      'client/bower_components/jStorage/jstorage.js',
       'client/app/app.js',
       'client/app/app.coffee',
       'client/app/**/*.js',

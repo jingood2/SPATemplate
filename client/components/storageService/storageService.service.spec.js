@@ -16,13 +16,13 @@ describe('Service: storageService', function () {
   });
 
   it('should do setValue & getValue', function() {
-    //storageService.set('user-token','abcdefg123');
+    storageService.set('user-token','abcdefg123');
     expect(storageService.get('user-token')).toEqual('abcdefg123');
     storageService.flush();
   });
 
   it('should do removable', function() {
-    //storageService.set('user-token','abcdefg123');
+    storageService.set('user-token','abcdefg123');
     expect(storageService.get('user-token')).toEqual('abcdefg123');
     storageService.remove('user-token');
     expect(storageService.get('user-token')).toBe(null);
