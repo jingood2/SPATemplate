@@ -6,5 +6,5 @@
 (function(){
   'use strict';
 
-  angular.module('sg.translation');
+  angular.module('sg.translation',[]);
 })();

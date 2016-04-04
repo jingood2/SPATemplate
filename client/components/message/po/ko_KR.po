@@ -1,0 +1,33 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.8.7\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ko_KR\n"
+
+#: client/components/message/message.html
+msgid "Login Fail"
+msgstr "로그인 실패"
+
+#: client/components/message/message.html
+msgid "Login Success"
+msgstr "로그인 성공"
+
+#: client/components/message/message.html
+msgid "Signup Fail"
+msgstr "회원 가입 실패"
+
+#: client/components/message/message.html
+msgid "Signup Success"
+msgstr "가입 성공"
+
+#: client/components/message/message.html
+msgid "User Email Duplicated"
+msgstr "중복된 이메일입니다"
