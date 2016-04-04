@@ -7,7 +7,7 @@
     .service('sgAlert', SgAlert);
 
   /* @ngInject */
-  function SgAlert() {
+  function SgAlert(gettextCatalog) {
     this.hi = function (){
       return 'hi';
     };
@@ -36,9 +36,9 @@
       }
     };
 
-    this.getMessage = function(msg) {
+    function getMessage(msg) {
       return gettextCatalog.getString(msg);
-    }
+    };
 
 
   }
