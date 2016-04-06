@@ -30,10 +30,10 @@
         });
       }
     };
-    
+
     function loginOauth(provider) {
       $window.location.href = '/auth/' + provider;
     };
   }
-  
+
 })();

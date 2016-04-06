@@ -18,9 +18,7 @@
       'responseError' : responseError
     };
 
-
     function request(config) {
-      console.log('config:' + config);
       return config;
     }
 
@@ -38,6 +36,7 @@
       if(rejection.data.message) {
         msg.value = rejection.data.message;
       }
+
       sgAlert.error(msg.value,msg.code);
       return $q.reject(rejection);
     }
@@ -46,9 +45,6 @@
       var msg = null;
 
       if(status == 400) {
-
-
-
         msg = {
           code : 'BAD REQUEST',
           value : 'You send a Bad request. send the right thing.'
@@ -72,6 +68,11 @@
           value : 'Not found the content.'
         }
 
+      } else if(status === 422) {
+        msg = {
+          code : "VALIDATION ERROR",
+          value : "Validation Failed."
+        }
       } else if (status == 500) {
         msg = {
           code : 'SERVER ERROR',

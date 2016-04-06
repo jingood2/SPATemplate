@@ -7,7 +7,7 @@
     .factory('Auth', Auth);
 
   /* @ngInject */
-  function Auth($location, $rootScope, $http, User, $cookieStore, $q) {
+  function Auth($location, $rootScope, $http, User, $cookieStore, $q, storageService) {
     var currentUser = {};
 
     /*
@@ -15,6 +15,9 @@
       currentUser = User.get();
     }
     */
+    if(storageService.get('token')) {
+      currentUser = User.get();
+    }
 
     return {
       /**
@@ -93,7 +96,8 @@
         password: user.password
       }).
       success(function(data) {
-        $cookieStore.put('token', data.token);
+        //$cookieStore.put('token', data.token);
+        storageService.set('token', data.token);
         currentUser = User.get();
         deferred.resolve(data);
         return cb();
@@ -108,7 +112,8 @@
     };
 
     function logout() {
-      $cookieStore.remove('token');
+      //$cookieStore.remove('token');
+      storageService.remove('token');
       currentUser = {};
     };
 
@@ -117,7 +122,8 @@
 
       return User.save(user,
         function(data) {
-          $cookieStore.put('token', data.token);
+          //$cookieStore.put('token', data.token);
+          storageService.set('token', data.token);
           currentUser = User.get();
           return cb(user);
         },
@@ -167,7 +173,8 @@
     }
 
     function getToken() {
-      return $cookieStore.get('token');
+      //return $cookieStore.get('token');
+      return storageService.get('token');
     }
 
   }
