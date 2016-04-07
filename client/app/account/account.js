@@ -19,6 +19,10 @@
         templateUrl: 'app/account/signup/signup.html',
         controller: 'SignupCtrl'
       })
+      .state('oauth', {
+        url: '/oauth',
+        controller: 'AuthCtrl'
+      })
       .state('settings', {
         url: '/settings',
         templateUrl: 'app/account/settings/settings.html',

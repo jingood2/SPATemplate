@@ -84,7 +84,13 @@
       /**
        * Get auth token
        */
-      getToken: getToken
+      getToken: getToken,
+
+      /**
+       * save access_token accepted by server and redirect home
+       */
+      loginOAuth: loginOAuth
+
     };
 
     function login(user, callback) {
@@ -96,7 +102,6 @@
         password: user.password
       }).
       success(function(data) {
-        //$cookieStore.put('token', data.token);
         storageService.set('token', data.token);
         currentUser = User.get();
         deferred.resolve(data);
@@ -175,6 +180,22 @@
     function getToken() {
       //return $cookieStore.get('token');
       return storageService.get('token');
+    }
+
+    function loginOAuth(callback) {
+      var cb = callback || angular.noop;
+
+      // before redirect '/', save token to jstorage
+      var token = $cookies.token;
+
+      console.log('token: ' + token);
+
+      storageService.set('token',token);
+      currentUser = User.get();
+
+      // go to '/'
+      return cb();
+
     }
 
   }
