@@ -191,8 +191,6 @@
       storageService.set('token',token);
       currentUser = User.get();
 
-      console.log('currentUser : ' + JSON.stringify(currentUser));
-
       // go to '/'
       return cb();
 

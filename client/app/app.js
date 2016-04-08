@@ -51,13 +51,15 @@
   }
 
   /* @ngInject */
-  function authInterceptor($rootScope, $q, $cookieStore, $location, storageService) {
+  function authInterceptor($rootScope, $q, $location, storageService) {
     return {
       // Add authorization token to headers
       request: function (config) {
         config.headers = config.headers || {};
         if (storageService.get('token')) {
           config.headers.Authorization = 'Bearer ' + storageService.get('token');
+
+          console.log('Authorization: ' + config.headers.Authorization  );
         }
         return config;
       },
