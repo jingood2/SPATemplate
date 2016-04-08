@@ -7,7 +7,7 @@
     .factory('Auth', Auth);
 
   /* @ngInject */
-  function Auth($location, $rootScope, $http, User, $cookieStore, $q, storageService) {
+  function Auth($location, $rootScope, $http, $cookies, User, $q, storageService) {
     var currentUser = {};
 
     /*
@@ -186,12 +186,12 @@
       var cb = callback || angular.noop;
 
       // before redirect '/', save token to jstorage
-      var token = $cookies.token;
-
-      console.log('token: ' + token);
+      var token = $cookies.get('token');
 
       storageService.set('token',token);
       currentUser = User.get();
+
+      console.log('currentUser : ' + JSON.stringify(currentUser));
 
       // go to '/'
       return cb();
