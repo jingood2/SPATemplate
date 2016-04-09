@@ -104,8 +104,8 @@ function changePassword(id,oldPass,newPass) {
   var deferred = Q.defer();
 
   User.findById(id, function (err, user) {
-    if(err) return deferred.reject(err);
-    if (!user) return deferred.reject(
+    if(err) deferred.reject(err);
+    if (!user) deferred.reject(
       Error.new({
         code: 'NOT_FOUND',
         message: 'User: ' + id + ' is not found.'
@@ -115,13 +115,15 @@ function changePassword(id,oldPass,newPass) {
     if(user.authenticate(oldPass)) {
       user.password = newPass;
       user.save(function(err) {
-        if (err) return deferred.reject(err);
-        return deferred.resolve();
+        if (err) deferred.reject(err);
+        deferred.resolve();
       });
     } else {
-      return deferred.reject(err);
+      deferred.reject(err);
     }
   });
+
+  return deferred.promise;
 };
 
 function me(id) {
@@ -130,14 +132,15 @@ function me(id) {
   User.findOne({
     _id: id
   }, '-salt -hashedPassword', function(err, user) { // don't ever give out the password or salt
-    if (err) return deferred.reject(err);
-    if (!user) return deferred.reject(
+    if (err) deferred.reject(err);
+    if (!user) deferred.reject(
       Error.new({
         code: 'NOT_FOUND',
         message: 'User: ' + id + ' is not found.'
       })
     );
-
     deferred.resolve(user);
   });
-}
+
+  return deferred.promise;
+};

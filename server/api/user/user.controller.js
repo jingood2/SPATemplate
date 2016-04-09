@@ -10,7 +10,6 @@ var UserService = require('./user.service');
 exports.index = index;
 exports.show = show;
 exports.create = create;
-exports.update = update;
 exports.destroy = destroy;
 exports.changePassword = changePassword;
 exports.me = me;
@@ -197,8 +196,7 @@ function me(req, res, next) {
       res.json(user);
     })
     .catch(function(err){
-      if (err) return next(err);
-      if (!user) return res.json(401);
+      res.json(401);
     });
 
   /*
